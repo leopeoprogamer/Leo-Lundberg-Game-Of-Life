@@ -17,7 +17,6 @@ public class GameOfLife : MonoBehaviour
     [SerializeField] Slider speedSlider;
     [SerializeField] TextMeshProUGUI generationText;
     [SerializeField] TextMeshProUGUI StableText;
-    [SerializeField] 
     GameObject[,] grid;
     List<bool[,]> previousStates;
 
