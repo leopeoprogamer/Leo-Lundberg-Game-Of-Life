@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameOfLife : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameOfLife : MonoBehaviour
    
     [SerializeField] GameObject cellPrefab;
     [SerializeField] Slider speedSlider;
+    [SerializeField] TextMeshProUGUI generationText;
+    [SerializeField] TextMeshProUGUI StableText;
+    [SerializeField] 
     GameObject[,] grid;
     List<bool[,]> previousStates;
 
@@ -86,9 +90,12 @@ public class GameOfLife : MonoBehaviour
     {
         generaationCount++;
 
+        generationText.text = "Generation: " + generaationCount;
+
         if (IsStable())
         {
             CancelInvoke("UpdateGrid");
+            StableText.gameObject.SetActive(true);
         }
         
         
